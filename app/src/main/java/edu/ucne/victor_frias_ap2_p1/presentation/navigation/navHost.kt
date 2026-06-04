@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import edu.ucne.victor_frias_ap2_p1.presentation.borrame.form.FormBorrameScreen
+import edu.ucne.victor_frias_ap2_p1.presentation.borrame.list.ListBorrameScreen
 
 @Composable
 fun navHost(
@@ -22,11 +23,25 @@ fun navHost(
         modifier = Modifier.padding(innerPadding)
     ) {
         composable<Screen.BorrameList> {
+            ListBorrameScreen(
+                onAddBorrame = {
+                    navController.navigate(Screen.BorrameForm())
+                },
+                onEditBorrame ={ id ->
+                    navController.navigate(Screen.BorrameForm(borrameId = id))
+                }
+            )
+
 
         }
         composable<Screen.BorrameForm> {
             val args = it.toRoute<Screen.BorrameForm>()
-            FormBorrameScreen()
+            FormBorrameScreen(
+                borrameId = args.borrameId,
+                onBack = {
+                    navController.navigateUp()
+                }
+            )
         }
     }
 

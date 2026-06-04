@@ -29,7 +29,7 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideRgistroDataBase(database: ResgitroDb): BorrameDao{
+    fun provideBorrameDao(database: ResgitroDb): BorrameDao{
         return database.BorrameDao()
     }
 

@@ -20,8 +20,6 @@ lifecycle = "2.10.0"
 foundationLayout = "1.11.1"
 hiltNavigationCompose = "1.3.0"
 material3 = "1.4.0"
-adaptive = "1.0.0"
-adaptive-nav-suite = "1.3.0"
 remoteCreationCore = "1.0.0-alpha010"
 turbine = "1.1.0"
 
@@ -65,4 +63,6 @@ turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 

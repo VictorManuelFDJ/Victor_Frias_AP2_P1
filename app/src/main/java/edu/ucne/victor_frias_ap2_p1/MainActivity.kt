@@ -11,8 +11,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import dagger.hilt.android.AndroidEntryPoint
+import edu.ucne.victor_frias_ap2_p1.presentation.navigation.navHost
 import edu.ucne.victor_frias_ap2_p1.ui.theme.Victor_Frias_AP2_P1Theme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +23,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             Victor_Frias_AP2_P1Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    navHost(innerPadding = innerPadding)
+
                 }
             }
         }
