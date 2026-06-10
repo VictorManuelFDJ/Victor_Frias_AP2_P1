@@ -63,7 +63,7 @@ fun FormBorrameScreen(
                 .padding(padding)
                 .padding(16.dp)
         ) {
-            Text("Formulario Borrame ")
+
 
             OutlinedTextField(
                 value = viewModel.nombre,
