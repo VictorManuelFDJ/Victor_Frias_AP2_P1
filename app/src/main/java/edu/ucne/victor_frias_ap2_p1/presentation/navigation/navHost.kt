@@ -9,8 +9,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import edu.ucne.victor_frias_ap2_p1.presentation.borrame.form.FormBorrameScreen
-import edu.ucne.victor_frias_ap2_p1.presentation.borrame.list.ListBorrameScreen
+import edu.ucne.victor_frias_ap2_p1.presentation.amonestacion.form.FormAmonestacionScreen
+import edu.ucne.victor_frias_ap2_p1.presentation.amonestacion.list.ListAmonestacionScreen
+
 
 @Composable
 fun navHost(
@@ -19,25 +20,25 @@ fun navHost(
 ){
     NavHost(
         navController = navController,
-        startDestination = Screen.BorrameList,
+        startDestination = Screen.AmonestacionList,
         modifier = Modifier.padding(innerPadding)
     ) {
-        composable<Screen.BorrameList> {
-            ListBorrameScreen(
-                onAddBorrame = {
-                    navController.navigate(Screen.BorrameForm())
+        composable<Screen.AmonestacionList> {
+            ListAmonestacionScreen(
+                onAddAmonestacion = {
+                    navController.navigate(Screen.AmonestacionForm())
                 },
-                onEditBorrame ={ id ->
-                    navController.navigate(Screen.BorrameForm(borrameId = id))
+                onEditAmonestacion ={ id ->
+                    navController.navigate(Screen.AmonestacionForm(amonestacionId = id))
                 }
             )
 
 
         }
-        composable<Screen.BorrameForm> {
-            val args = it.toRoute<Screen.BorrameForm>()
-            FormBorrameScreen(
-                borrameId = args.borrameId,
+        composable<Screen.AmonestacionForm> {
+            val args = it.toRoute<Screen.AmonestacionForm>()
+            FormAmonestacionScreen(
+                amonestacionId = args.amonestacionId,
                 onBack = {
                     navController.navigateUp()
                 }

@@ -5,10 +5,10 @@ import kotlinx.serialization.Serializable
 sealed class Screen{
 
      @Serializable
-     data object BorrameList: Screen(){
+     data object AmonestacionList: Screen(){
 
      }
 
     @Serializable
-    data class BorrameForm(val borrameId: Int = 0): Screen()
+    data class AmonestacionForm(val amonestacionId: Int = 0): Screen()
 }
